@@ -9,7 +9,7 @@ class TodoController extends Controller
 {
     public function add()
     {
-        return view('todo.create'); 
-        //resourse/views/todoにあるcreate.blade.php
+        return view('todo/create'); 
+        //resourse/views/todo/create.blade.php
     }
 }

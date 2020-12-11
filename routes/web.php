@@ -11,18 +11,21 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('', function () {
     return view('welcome');
 });
 
-Route::get('/sakon', function () {
+Route::get('sakon', function () {
     return view('sakon');
+});
+
+Route::get('todo/ryo', function () {
+    return view('todo/ryo');
 });
 
 Route::get('todo/create', 'Admin\TodoController@add');
 //todo/createはsakon.com以下のディレクトリを表し、アクセスされたページのこと。
-//Admin\TodoControllerはHTTPをrootとしたディレクトリの位置。@addはコントローラのAction名。
-//ab
+//app/HTTP/Admin/TodoController内に書かれたadd関数を実行
 
 Auth::routes();
 
@@ -31,3 +34,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => ''], function() {
     Route::get('todo/create', 'Admin\TodoController@add')->middleware('auth');
 });
+//解説欲しい。Routeはどこにある？get,routesとは？middlewareは？groupは？
