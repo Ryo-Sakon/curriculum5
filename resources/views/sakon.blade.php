@@ -7,6 +7,6 @@
         <title>Laravel</title>
     </head>
     <body>
-        <h1>Helllo SakonRyo!!</h1>
+        <h1>Helllo SakonRyo.!!</h1>
 </body>
 </html>
