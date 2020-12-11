@@ -22,7 +22,7 @@ Route::get('/sakon', function () {
 Route::get('todo/create', 'Admin\TodoController@add');
 //todo/createはsakon.com以下のディレクトリを表し、アクセスされたページのこと。
 //Admin\TodoControllerはHTTPをrootとしたディレクトリの位置。@addはコントローラのAction名。
-//a
+//ab
 
 Auth::routes();
 
