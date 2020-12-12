@@ -49,31 +49,32 @@ class TodoController extends Controller
     }
 
     public function edit(Request $request)
-  {
-      // Todo Modelからデータを取得する
-      $todos = Todo::find($request->id);
-      if (empty($todos)) {
-        abort(404);    
-      }
-      return view('todo.edit', ['todo_form' => $todos]);
-  }
+    {
+        // Todo Modelからデータを取得する
+        $todos = Todo::find($request->id);
+        if (empty($todos)) {
+            abort(404);
+        }
+        return view('todo.edit', ['todo_form' => $todos]);
+    }
 
-  public function update(Request $request)
-  {
-    // Validationをかける
-    $this->validate($request, Todo::$rules);
-    // Todo Modelからデータを取得する
-    $todo = Todo::find($request->get('id'));
-    // 送信されてきたフォームデータを格納する
-    $todo_form = $request->all();
+    public function update(Request $request)
+    {
+        // Validationをかける
+        $this->validate($request, Todo::$rules);
+        // Todo Modelからデータを取得する
+        $todo = Todo::find($request->get('id'));
+        // 送信されてきたフォームデータを格納する
+        $todo_form = $request->all();
 
-    unset($todo_form['_token']);
-    unset($todo_form['remove']);
+        unset($todo_form['_token']);
+        unset($todo_form['remove']);
 
-    // 該当するデータを上書きして保存する
-    $todo->fill($todo_form)->save();
+        // 該当するデータを上書きして保存する
+        $todo->fill($todo_form)->save();
 
-    return redirect('todo');
+        return redirect('todo');
+    }
 }
 //このメソッドの実行は、どこに書かれているか？→web.php
 //ここは、機能そのもの

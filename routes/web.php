@@ -34,4 +34,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('todo/create', 'Admin\TodoController@create'); //追記
 });
 
-Route::get('todo', 'Admin\TodoController@index');
+Route::get('todo/index', 'Admin\TodoController@index');
+
+Route::get('todo/edit/{id}', 'Admin\TodoController@edit'); // 追記
+Route::post('todo/edit', 'Admin\TodoController@update'); // 追記
