@@ -10,7 +10,7 @@
 
         <title>@yield('title')</title><!--どこに繋がる？-->
 
-         {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
+        {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
         <script src="{{ asset('js/app.js') }}" defer></script><!--ok-->
 
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">

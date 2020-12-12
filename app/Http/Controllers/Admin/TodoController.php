@@ -43,7 +43,7 @@ class TodoController extends Controller
             $todos = Todo::where('title', $cond_title)->get();
         } else {
             // それ以外はすべて取得する
-            $todos = Todo::all();
+            $todos = Todo::where('is_complete', 0)->get();
         }
         return view('todo.index', ['todos' => $todos, 'cond_title' => $cond_title]);
     }
@@ -74,6 +74,15 @@ class TodoController extends Controller
         $todo->fill($todo_form)->save();
 
         return redirect('todo');
+    }
+
+    public function delete(Request $request)
+    {
+        // 該当するTodo Modelを取得
+        $todos = Todo::find($request->id);
+        // 削除する
+        $todos->delete();
+        return redirect('todo/');
     }
 }
 //このメソッドの実行は、どこに書かれているか？→web.php

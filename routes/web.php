@@ -38,3 +38,5 @@ Route::get('todo/index', 'Admin\TodoController@index');
 
 Route::get('todo/edit/{id}', 'Admin\TodoController@edit'); // 追記
 Route::post('todo/edit', 'Admin\TodoController@update'); // 追記
+
+Route::get('todo/delete/{id}', 'Admin\TodoController@delete');

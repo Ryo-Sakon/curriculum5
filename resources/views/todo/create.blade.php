@@ -1,7 +1,7 @@
-@extends('layouts.layout')
-@section('title', 'todoの新規作成')
+@extends('layouts.layout')<!--require(index.php)のようなもの-->
+@section('title', 'todoの新規作成')<!--タイトル-->
 
-@section('content')
+@section('content')<!--bodyのような物？-->
 <div class="container">
     <div class="row">
         <div class="col-md-8 mx-auto">
