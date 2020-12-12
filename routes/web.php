@@ -33,5 +33,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => ''], function() {
     Route::get('todo/create', 'Admin\TodoController@add')->middleware('auth');
+    Route::post('todo/create', 'Admin\TodoController@create');
 });
 //解説欲しい。Routeはどこにある？get,routesとは？middlewareは？groupは？
