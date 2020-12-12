@@ -40,3 +40,22 @@ Route::get('todo/edit/{id}', 'Admin\TodoController@edit'); // 追記
 Route::post('todo/edit', 'Admin\TodoController@update'); // 追記
 
 Route::get('todo/delete/{id}', 'Admin\TodoController@delete');
+
+Route::get('todo/complete', 'TodoController@complete');
+Route::get('todo/complete_list', 'TodoController@complete_list');
+Route::get('todo/incomplete', 'TodoController@incomplete');
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('todo/create', 'TodoController@add');
+    Route::post('todo/create', 'TodoController@create'); //追記
+    Route::get('todo', 'TodoController@index'); // 追記
+    Route::get('todo/edit', 'TodoController@edit'); // 追記
+    Route::post('todo/edit', 'TodoController@update'); // 追記
+    Route::get('todo/delete', 'TodoController@delete');
+    Route::get('todo/complete', 'TodoController@complete');
+    Route::get('todo/complete_list', 'TodoController@complete_list');
+    Route::get('todo/incomplete', 'TodoController@incomplete');
+    Route::get('todo/sort', 'TodoController@sort');
+    Route::get('todo/dead_list', 'TodoController@dead_list');
+    Route::post('todo/dead_list', 'TodoController@search_dead_list');
+});

@@ -40,10 +40,10 @@
                     <div class="col-md-10">
                         <select class="form-control" name="priority" min="1" max="5" value="{{ old('priority') }}">
                             <?php
-                            for ($i = 1; $i <= 5; $i++) {
-                                print('<option value="' . $i . '">' . $i . '</option>');
-                            }
-                            ?>
+for ($i = 1; $i <= 5; $i++) {
+    print('<option value="' . $i . '">' . $i . '</option>');
+}
+?>
                         </select>
                     </div>
                 </div>
