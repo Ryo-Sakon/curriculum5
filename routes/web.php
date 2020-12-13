@@ -54,3 +54,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('todo/dead_list', 'Admin\TodoController@dead_list');
     Route::post('todo/dead_list', 'Admin\TodoController@search_dead_list');
 });
+
+Route::get('sns', 'Admin\SNSController@index');
