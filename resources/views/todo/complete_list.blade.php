@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.layout')
 @section('title', '登録済み予定の一覧')
 
 @section('content')
@@ -6,7 +6,7 @@
         <h2>予定完了一覧</h2>
         <div class="select-menu">
             <ul class="sort">
-                <li><a href="{{ action('TodoController@add') }}" role="button" class="">新規作成</a></li>
+                <li><a href="{{ action('Admin\TodoController@add') }}" role="button" class="">新規作成</a></li>
             </ul>
         </div>
         <table class="table">
@@ -27,7 +27,7 @@
                     <td>{{ str_limit($todo->space, 250) }}</td>
                     <td>
                         <div><a class="mod-btn"
-                                href="{{ action('TodoController@incomplete', ['id' => $todo->id]) }}">未完了</a></div>
+                                href="{{ action('Admin\TodoController@incomplete', ['id' => $todo->id]) }}">未完了</a></div>
                     </td>
                     </tr>
                 @endforeach

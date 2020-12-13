@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.layout')
 @section('title', 'todos一覧')
 
 @section('content')
@@ -8,10 +8,10 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="{{ action('TodoController@add') }}" role="button" class="btn btn-primary">新規作成</a>
+                <a href="{{ action('Admin\TodoController@add') }}" role="button" class="btn btn-primary">新規作成</a>
             </div>
             <div class="col-md-8">
-                <form action="{{ action('TodoController@index') }}" method="get">
+                <form action="{{ action('Admin\TodoController@index') }}" method="get">
                     <div class="form-group row">
                         <label class="col-md-2">タイトル</label>
                         <div class="col-md-8">
@@ -22,9 +22,9 @@
                             <input type="submit" class="btn btn-primary" value="検索">
                         </div>
                         <ul class="sort">
-                            <li><a href="{{ action('TodoController@add') }}" role="button">新規作成</a></li>
-                            <li><a href="{{ action('TodoController@sort') }}" role="button">重要度昇順↑</a></li>
-                            <li><a href="{{ action('TodoController@index') }}" role="button">重要度降順↓</a></li>
+                            <li><a href="{{ action('Admin\TodoController@add') }}" role="button">新規作成</a></li>
+                            <li><a href="{{ action('Admin\TodoController@sort') }}" role="button">重要度昇順↑</a></li>
+                            <li><a href="{{ action('Admin\TodoController@index') }}" role="button">重要度降順↓</a></li>
                         </ul>
                     </div>
                 </form>
@@ -59,14 +59,14 @@
                                 <td>{{ str_limit($todo->priority, 100) }}</td>
                                 <td>
                                     <div>
-                                        <a href="{{ action('TodoController@edit', ['id' => $todo->id]) }}">編集</a>
+                                        <a href="{{ action('Admin\TodoController@edit', ['id' => $todo->id]) }}">編集</a>
                                     </div>
                                     <div>
-                                        <a href="{{ action('TodoController@delete', ['id' => $todo->id]) }}">削除</a>
+                                        <a href="{{ action('Admin\TodoController@delete', ['id' => $todo->id]) }}">削除</a>
                                     </div>
                                     <div>
                                         <a class="mod-btn"
-                                            href="{{ action('TodoController@complete', ['id' => $todo->id]) }}">完了</a>
+                                            href="{{ action('Admin\TodoController@complete', ['id' => $todo->id]) }}">完了</a>
                                     </div>
                                 </td>
 

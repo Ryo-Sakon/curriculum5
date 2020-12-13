@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.layout')
 @section('title', '予定の編集')
 
 @section('content')
@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>予定編集</h2>
-                <form action="{{ action('Admin/TodoController@update') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\TodoController@update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)

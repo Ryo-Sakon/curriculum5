@@ -1,7 +1,4 @@
 <?php
-// namespaceとは、PHPで名前空間（エイリアス）を設定するために使用されるものです。
-// 一般的にPHPフォルダーのはじめにnamespace <ファイルのパス>と記載します。
-// エイリアスをファイルのパスにすることで自動読み込みを行うことができるようにしています。
 
 namespace App\Http\Controllers\Admin; //ファイルの位置
 
@@ -126,8 +123,8 @@ class TodoController extends Controller
         $todos = Todo::where('is_complete', 0)
             ->orderBy('priority', 'asc')
             ->get();
-
-        return view('todo.index', ['todos' => $todos, 'cond_title' => $cond_title]);
+            $today = Carbon::today();
+        return view('todo.index', ['todos' => $todos, 'cond_title' => $cond_title] ,['today' => $today]);
     }
 
     public function dead_list(Request $request)

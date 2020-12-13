@@ -29,11 +29,6 @@ Route::group(['prefix' => ''], function() {
     Route::get('todo/create', 'Admin\TodoController@add')->middleware('auth');
 });//付け加えた物
 
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('todo/create', 'Admin\TodoController@add');
-    Route::post('todo/create', 'Admin\TodoController@create'); //追記
-});
-
 Route::get('todo/index', 'Admin\TodoController@index');
 
 Route::get('todo/edit/{id}', 'Admin\TodoController@edit'); // 追記
@@ -41,21 +36,21 @@ Route::post('todo/edit', 'Admin\TodoController@update'); // 追記
 
 Route::get('todo/delete/{id}', 'Admin\TodoController@delete');
 
-Route::get('todo/complete', 'TodoController@complete');
-Route::get('todo/complete_list', 'TodoController@complete_list');
-Route::get('todo/incomplete', 'TodoController@incomplete');
+Route::get('todo/complete', 'Admin\TodoController@complete');
+Route::get('todo/complete_list', 'Admin\TodoController@complete_list');
+Route::get('todo/incomplete', 'Admin\TodoController@incomplete');
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('todo/create', 'TodoController@add');
-    Route::post('todo/create', 'TodoController@create'); //追記
-    Route::get('todo', 'TodoController@index'); // 追記
-    Route::get('todo/edit', 'TodoController@edit'); // 追記
-    Route::post('todo/edit', 'TodoController@update'); // 追記
-    Route::get('todo/delete', 'TodoController@delete');
-    Route::get('todo/complete', 'TodoController@complete');
-    Route::get('todo/complete_list', 'TodoController@complete_list');
-    Route::get('todo/incomplete', 'TodoController@incomplete');
-    Route::get('todo/sort', 'TodoController@sort');
-    Route::get('todo/dead_list', 'TodoController@dead_list');
-    Route::post('todo/dead_list', 'TodoController@search_dead_list');
+    Route::get('todo/create', 'Admin\TodoController@add');
+    Route::post('todo/create', 'Admin\TodoController@create'); //追記
+    Route::get('todo', 'Admin\TodoController@index'); // 追記
+    Route::get('todo/edit', 'Admin\TodoController@edit'); // 追記
+    Route::post('todo/edit', 'Admin\TodoController@update'); // 追記
+    Route::get('todo/delete', 'Admin\TodoController@delete');
+    Route::get('todo/complete', 'Admin\TodoController@complete');
+    Route::get('todo/complete_list', 'Admin\TodoController@complete_list');
+    Route::get('todo/incomplete', 'Admin\TodoController@incomplete');
+    Route::get('todo/sort', 'Admin\TodoController@sort');
+    Route::get('todo/dead_list', 'Admin\TodoController@dead_list');
+    Route::post('todo/dead_list', 'Admin\TodoController@search_dead_list');
 });
