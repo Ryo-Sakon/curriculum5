@@ -1,12 +1,12 @@
 @extends('layouts.layout')
 @section('title', 'todos一覧')
 
-@section('content')
+@section('content')<!---->
     <div class="container">
         <div class="row">
             <h2>Todos一覧</h2>
         </div>
-        <div class="row">
+        <div class="row"><!--classはbootstrapから取っており、レスポンシブデザイン画面の適用rowはグリッドデザイン縦１２分割の何個使うか、-->
             <div class="col-md-4">
                 <a href="{{ action('Admin\TodoController@add') }}" role="button" class="btn btn-primary">新規作成</a>
             </div>

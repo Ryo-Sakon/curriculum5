@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}"><!--構造は？-->
+<html lang="{{ app()->getLocale() }}"><!--echoと同じblade特有-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         
-        <meta name="csrf-token" content="{{ csrf_token() }}"><!--?-->
+        <meta name="csrf-token" content="{{ csrf_token() }}"><!--クロスサイトリクエスト異なるサイト同士での攻撃を防ぐ-->
 
         <title>@yield('title')</title><!--どこに繋がる？-->
 
@@ -47,7 +47,7 @@
             </nav>
 
             <main class="py-4">
-                @yield('content')<!--??-->
+                @yield('content')<!--セクションコンテント-->
             </main>
         </div>
     </body>

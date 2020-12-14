@@ -127,7 +127,7 @@ class TodoController extends Controller
         return view('todo.index', ['todos' => $todos, 'cond_title' => $cond_title] ,['today' => $today]);
     }
 
-    public function dead_list(Request $request)
+    public function dead_list(Request $request)//RequestはClassの型
     {
         // 該当するTodo Modelを取得
         $posts = Todo::where([
